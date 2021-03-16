@@ -1,0 +1,15 @@
+Zadanie 1
+Napisz program, który:
+
+    -utworzy potok (funkcją pipe),
+    -uruchomi podproces, z którym proces nadrzędny będzie komunikował się przez ten potok (funkcja fork),
+    -proces nadrzędny otworzy plik tekstowy podany w argumencie wywołania programu, a następnie wyśle procesowi potomnemu zawartość tego pliku przez potok,
+    -proces potomny odczyta dane z potoku, a następnie wyświetli je na standardowym wyjściu dodając znak '#' na początku i końcu każdej odebranej paczki danych. Wielkość paczek jest dowolna. 
+
+Zadanie 2
+Zmodyfikuj program z punktu 1:
+
+    -proces nadrzędny zamiast pliku graficznego ma przesyłać plik graficzny (JPEG lub PNG),
+    -proces potomny zamiast odczytywać bezpośrednio z potoku wykona przekierowanie zawartości potoku na standardowe wejście (funkcje close i dup), a następnie uruchomi program (jedna z funkcji exec*) wyświetlający obrazek pobrany z tego wejścia (deskryptora 0).
+    -Jako program wyświetlający obrazki można zastosować program display należący do pakietu Image Magick. Przydatnym programem wyświetlającym obrazki jest również xv, lecz jego licencja zezwala na jego użycie tylko do celów prywatnych.
+    -Uruchom program, sprawdź, czy proces potomny zacznie wyświetlać obrazek od razu, czy dopiero po zamknięciu potoku przez proces nadrzędny. 
